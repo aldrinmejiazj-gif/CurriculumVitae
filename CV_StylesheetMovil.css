@@ -1,0 +1,377 @@
+/* Variables para colores y estilos consistentes */
+:root {
+  --primary-color: #079246;
+  --secondary-color: #1362bd;
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --text-dark: #2d3436;
+  --text-light: #636e72;
+  --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Contenedor principal para limitar el ancho en pantallas grandes */
+body > * {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Foto de Perfil */
+.pp {
+  display: block;
+  margin: 2rem auto;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.pp:hover {
+  transform: scale(1.05);
+}
+
+/* Encabezados */
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem); /* Tamaño fluido */
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+/* Navegación y Contacto */
+nav {
+  background: var(--glass-bg);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+/* Secciones Estilo Tarjeta Moderno */
+section {
+  background: var(--glass-bg);
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  border-left: 6px solid var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+/* Ajustes para Tablas Responsivas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  overflow-x: auto;
+  display: block; /* Permite scroll lateral en móviles */
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Formulario */
+form {
+  display: grid;
+  gap: 1rem;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+input,
+select,
+textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #045d2c;
+}
+
+/* Galería de Intereses (About Me) */
+.interests-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+.interests-gallery img {
+  width: 120px;
+  height: 120px;
+  border-radius: 15px; /* Cuadrado redondeado para variar */
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.interests-gallery img:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+
+/* Aplicando la estética unificada a la página About Me */
+
+.aboutme-page {
+  /* Usamos el mismo fondo degradado y centrado que el CV principal */
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutme-page section {
+  /* Estilo de tarjeta "Glassmorphism" coherente con MyCV */
+  background: var(--glass-bg);
+  border-left: 6px solid var(--secondary-color); /* Color azul para diferenciar secciones de interés */
+  box-shadow: var(--shadow);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  max-width: 900px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.aboutme-page section:hover {
+  transform: translateY(-5px);
+}
+
+.aboutme-page h1 {
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.aboutme-page p {
+  text-indent: 1.5em;
+  color: var(--text-dark);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Galería de Intereses Refinada */
+.interests-gallery {
+  display: grid;
+  /* Grid responsivo: se ajusta solo según el tamaño de la pantalla */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+  justify-items: center;
+}
+
+.aboutme-page .interests-gallery img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white; /* Borde blanco para resaltar sobre el cristal */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.aboutme-page .interests-gallery img:hover {
+  transform: scale(1.15);
+  border-color: var(--secondary-color);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/* Ajustes para móviles (Media Query integrada) */
+@media screen and (max-width: 430px) {
+  .aboutme-page {
+    padding: 1rem;
+  }
+
+  .aboutme-page section {
+    padding: 1.2rem;
+    border-left-width: 4px;
+  }
+
+  .interests-gallery {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Dos columnas en móviles pequeños */
+    gap: 10px;
+  }
+
+  .aboutme-page .interests-gallery img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* --- MEDIA QUERIES PARA MÓVILES --- */
+/* --- ESTILOS ESPECÍFICOS PARA MÓVILES (Hasta 430px) --- */
+@media screen and (max-width: 430px) {
+  body {
+    margin: 10px;
+    padding: 10px;
+    background-attachment: scroll; /* Mejora el rendimiento en móviles */
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Ajuste para que tu nombre no se corte */
+  }
+
+  /* Ajuste de tu Foto de Perfil */
+  .pp {
+    width: 10rem;
+    height: 10rem;
+    margin-top: 1rem;
+  }
+
+  /* Tu navegación vertical centrada con estilo Glass */
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 1.2rem;
+    text-align: center;
+  }
+
+  /* Estética de las secciones en pantallas pequeñas */
+  section {
+    padding: 15px;
+    margin-bottom: 1.5rem;
+    border-left-width: 4px; /* Un poco más delgado para pantallas pequeñas */
+  }
+
+  /* Optimizando tus tablas para swipe lateral */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-radius: 8px;
+  }
+
+  /* Ajuste de lectura */
+  p {
+    text-indent: 1em;
+    font-size: 0.95rem; /* Un pelín más pequeño para legibilidad */
+  }
+
+  /* Imágenes responsivas en 'About Me' */
+  .interests-gallery img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media print {
+  /* Ocultar elementos que no quieres en el papel */
+  nav,
+  form,
+  .btn-download,
+  hr,
+  button {
+    display: none !important;
+  }
+
+  /* Ajustar el diseño para que ocupe toda la página */
+  body {
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  section {
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    padding: 10px 0;
+    page-break-inside: avoid; /* Evita que una sección se corte entre dos páginas */
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: black;
+    text-shadow: none;
+  }
+}
